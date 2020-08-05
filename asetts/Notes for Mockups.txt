@@ -1,0 +1,8 @@
+﻿Notes to look at with my Mockups
+
+
+* Layer each Manilla folder and whenever the user-selected page is displayed, the appropriate manilla folder should be displayed as well. (if the store page is opened, the store tabbed folder should be at the front) 
+* Designer Boi Video is Youtube embedded on the home page for now, all the socials are quick links to profiles. 
+* Mobile layout: I placed all the folders separated out because of the negative space issue, if we were to created the traditional layout but with mobile dimensions, there would be a ton of blank space at the bottom of the page (can we think of some ideas to fix this, one thing i thought of doing was just elongating the folders and making them a bit bigger on screen)
+* Animated text at the top for the “ASAP NAST” branding could be a possibility, I can get that to you as a looping gif, depending on if you think thats a good idea
+* Ignore the black and white color grade on all the images, that can be normal colors
