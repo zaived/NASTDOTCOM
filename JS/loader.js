@@ -5,7 +5,7 @@ function loadNow(opacity) {
     displayContent();
   } else {
     loader.style.opacity = opacity;
-    window.setTimeout(function () {
+    window.setTimeout(function() {
       loadNow(opacity - 0.01);
     }, 100);
   }
@@ -16,7 +16,7 @@ function displayContent() {
   document.getElementById("content").style.display = "block";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   loader = document.getElementById("loader");
   loadNow(2.9);
 });

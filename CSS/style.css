@@ -85,9 +85,11 @@ nav {
 .toggle .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
+
 .toggle .line2 {
   opacity: 0;
 }
+
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
@@ -131,6 +133,7 @@ footer ul li {
   height: 0;
   animation: fade 2s;
 }
+
 .iframe-container iframe {
   position: absolute;
   top: 40px;
@@ -150,6 +153,7 @@ footer ul li {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -162,13 +166,11 @@ footer ul li {
 }
 
 /* Track */
-
 ::-webkit-scrollbar-track {
   background: #ffffff;
 }
 
 /* Handle */
-
 ::-webkit-scrollbar-thumb {
   background: #dcd2c4;
   width: 15px;
@@ -193,6 +195,7 @@ footer ul li {
     background-image: url(HOME.png);
     background-size: cover;
   }
+
   .iframe-container iframe {
     position: absolute;
     top: 40px;
@@ -210,13 +213,11 @@ footer ul li {
   }
 
   /* Track */
-
   ::-webkit-scrollbar-track {
     background-color: transparent;
   }
 
   /* Handle */
-
   ::-webkit-scrollbar-thumb {
     background-color: transparent;
     width: 0px;
