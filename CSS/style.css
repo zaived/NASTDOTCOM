@@ -124,6 +124,28 @@ footer ul li {
   padding: 0px 20px;
 }
 
+.iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  animation: fade 2s;
+}
+.iframe-container iframe {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 80%;
+}
+
+.folder-content img {
+  display: none;
+}
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -155,6 +177,31 @@ footer ul li {
 @media (max-width: 800px) {
   .gallery img {
     width: 650px;
+  }
+
+  .iframe-container {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    margin-bottom: 20%;
+    padding-bottom: 56.25%;
+    height: 0;
+    animation: fade 2s;
+    background-image: url(HOME.png);
+    background-size: cover;
+  }
+  .iframe-container iframe {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 80%;
   }
 
   ::-webkit-scrollbar {
@@ -193,6 +240,16 @@ footer ul li {
   footer {
     margin-top: 15%;
     margin-bottom: 20%;
+  }
+
+  .folder-container {
+    animation: fade 2s;
+    text-align: center;
+  }
+
+  .folder-content img {
+    display: inline-block !important;
+    width: 350px;
   }
 }
 
