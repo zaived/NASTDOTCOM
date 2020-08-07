@@ -1,9 +1,21 @@
+// compile
 @font-face {
-  font-family: "heavy_heapregular";
-  src: url("heavy_heap-webfont.woff2") format("woff2"),
-    url("heavy_heap-webfont.woff") format("woff");
+  font-family: 'heavy_heapregular';
+  src: url('heavy_heap-webfont.woff2') format("woff2"), url('heavy_heap-webfont.woff') format("woff");
   font-weight: normal;
   font-style: normal;
+}
+$smartphones: 'screen and (max-width: 768px)';
+@mixin full-height {
+  height: 100vh;
+  height: -webkit-fill-available;
+  width: 100%;
+}
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 * {
@@ -12,11 +24,11 @@
 }
 
 body {
-  background-color: #dcd2c4;
-  position: relative;
+  background: #dcd2c4 url('../assets/bg.gif') center center fixed no-repeat;
+  background-size: cover;
   width: 100%;
-  height: 100vh;
-  font-family: "heavy_heapregular", sans-serif;
+  font-family: 'heavy_heapregular', sans-serif;
+  min-height: 100%;
 }
 
 a {
@@ -59,8 +71,7 @@ nav {
   margin: 5px;
   transition: all 0.3s ease;
 }
-
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   nav {
     display: none;
   }
@@ -69,7 +80,6 @@ nav {
 .nav-active {
   transform: translateX(0%);
 }
-
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -95,8 +105,12 @@ nav {
 }
 
 .header-container {
-  margin-top: -50px;
   text-align: center;
+
+  & a {
+    margin: 30px 0;
+    @include flex-center();
+  }
 }
 
 header img {
@@ -123,32 +137,26 @@ footer {
 footer ul li {
   display: inline-block;
   font-size: 30px;
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
 .iframe-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
+  width: 80%;
+  height: 47.54716984vw;
+  max-width: 1000px;
+  max-height: 625px;
   animation: fade 2s;
+  @include flex-center;
 }
 
 .iframe-container iframe {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .folder-content img {
   display: none;
 }
-
 @keyframes fade {
   0% {
     opacity: 0;
@@ -158,75 +166,59 @@ footer ul li {
     opacity: 1;
   }
 }
-
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-  background-color: #ffffff;
+  background-color: #dcd2c4;
 }
-
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #dcd2c4;
 }
-
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #dcd2c4;
+  background: #ffffff;
   width: 15px;
 }
 
-@media (max-width: 800px) {
+.home-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 768px) {
   .gallery img {
     width: 650px;
   }
 
   .iframe-container {
-    position: relative;
-    right: 0;
-    left: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
-    margin-bottom: 20%;
-    padding-bottom: 56.25%;
-    height: 0;
     animation: fade 2s;
-    background-image: url(HOME.png);
-    background-size: cover;
+    width: 80%;
+    height: 61.7314488vw;
+    background: url('../assets/video-folder.png') center center no-repeat;
+    background-size: contain;
+    margin: 20px 0;
   }
 
   .iframe-container iframe {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
     width: 80%;
-    height: 80%;
+    height: 70%;
+    max-height: 486px;
   }
 
   ::-webkit-scrollbar {
     width: 0;
     background-color: transparent;
   }
-
   /* Track */
   ::-webkit-scrollbar-track {
     background-color: transparent;
   }
-
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background-color: transparent;
-    width: 0px;
-  }
-}
-
-@media (max-width: 600px) {
-  .header-container {
-    margin-top: 0px !important;
+    width: 0;
   }
 
   header img {
@@ -244,24 +236,27 @@ footer ul li {
   }
 
   .folder-container {
+    width: 80%;
     animation: fade 2s;
-    text-align: center;
+    @include flex-center();
   }
 
-  .folder-content img {
-    display: inline-block !important;
-    width: 350px;
-  }
-}
+  .folder-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-@media (max-width: 375px) {
-  .gallery img {
-    width: 290px;
-  }
-}
+    & a {
+      width: 100%;
+    }
 
-@media (max-width: 320px) {
-  .gallery img {
-    width: 250px;
+    & img {
+      display: inherit;
+      width: 100%;
+      margin: 20px 0;
+    }
   }
 }
+@import "shop";
+@import "cart";

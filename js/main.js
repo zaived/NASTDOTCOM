@@ -37,7 +37,7 @@ $(() => {
 <p class="shop-item-price">$${product.variants[0].price.split(".")[0]}</p>
 <div class="shop-size-selector">
 </div>
-<button class="shop-add-to-cart">ADD TO CART</button>
+<button class="shop-add-to-cart" disabled>SOLD OUT</button>
 </div>
 `);
       for (let j = 0; j < product.variants.length; j++) {
@@ -73,9 +73,6 @@ $(() => {
       parentElem.find(".shop-add-to-cart").text("ADD TO CART");
       parentElem.find(".shop-add-to-cart").prop("disabled", false);
       parentElem.find(".shop-messages").text("");
-    } else {
-      parentElem.find(".shop-add-to-cart").text("SOLD OUT");
-      parentElem.find(".shop-add-to-cart").prop("disabled", true);
     }
   });
 

@@ -17,8 +17,13 @@ $(() => {
       .then(checkout => {
         currCheckout = checkout;
         var items = checkout.lineItems;
-        for (var i = 0; i < items.length; i++) {
-          addItem(items[i]);
+        if (items.length > 0) {
+          for (var i = 0; i < items.length; i++) {
+            addItem(items[i]);
+          }
+          $(".cart-wrap").append(`<button id="checkout">CHECK OUT</button>`);
+        } else {
+          $(".cart-wrap").append(`<h1>Cart is empty</h1>`);
         }
       })
       .catch(err => {
